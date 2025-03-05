@@ -2,8 +2,16 @@ import tkinter as tk
 from tkinter import ttk
 
 def convert():
+    num = int(number.get())
 
-    result_l.config(text = f"{number.get()}")
+    if con_var.get() == 1: # Celsius to Farenheit
+        result = (num * 9/5) + 32
+        result_l.config(text = f"{num}C is equal to {result}F")
+        
+    elif con_var.get() == 2: # Farenheit to Celsius
+        result = (num - 32) * (5/9)
+        result_l.config(text = f"{num}F is equal to {result}C")
+
 
 root = tk.Tk()
 con_var = tk.IntVar()
